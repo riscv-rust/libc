@@ -1724,6 +1724,9 @@ cfg_if! {
     } else if #[cfg(any(target_arch = "s390x"))] {
         mod s390x;
         pub use self::s390x::*;
+    } else if #[cfg(any(target_arch = "riscv"))] {
+        mod riscv;
+        pub use self::riscv::*;
     } else {
         mod other;
         pub use self::other::*;
